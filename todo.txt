@@ -1,0 +1,17 @@
+#TODO:
+
+	#VISUAL
+		#implement fullscreen
+		#window mode optimizations
+		#user interface
+
+	#CONTROLS
+		#create and integrate a .cfg file to set parameters
+		#assign hotkey to parameters
+
+	#SIMULATION
+		#contagion simulation
+		#realistic parameters
+		#use time units instead of frames
+		#performance optimizations
+		#supression scenarios
