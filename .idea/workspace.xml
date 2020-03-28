@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a1b3819-fc46-4397-befa-10421da4d20e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -77,7 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585384386100</updated>
       <workItem from="1585384400191" duration="9326000" />
-      <workItem from="1585400128072" duration="3297000" />
+      <workItem from="1585400128072" duration="7700000" />
     </task>
     <servers />
   </component>
@@ -93,22 +92,22 @@
       <screen x="0" y="31" width="1440" height="869" />
     </state>
     <state x="503" y="226" width="434" height="487" key="FileChooserDialogImpl/0.31.1440.869@0.31.1440.869" timestamp="1585401050677" />
-    <state width="1394" height="218" key="GridCell.Tab.0.bottom" timestamp="1585403441970">
+    <state width="1394" height="218" key="GridCell.Tab.0.bottom" timestamp="1585425013031">
       <screen x="0" y="31" width="1440" height="869" />
     </state>
-    <state width="1394" height="218" key="GridCell.Tab.0.bottom/0.31.1440.869@0.31.1440.869" timestamp="1585403441970" />
-    <state width="1394" height="218" key="GridCell.Tab.0.center" timestamp="1585403441968">
+    <state width="1394" height="218" key="GridCell.Tab.0.bottom/0.31.1440.869@0.31.1440.869" timestamp="1585425013031" />
+    <state width="1394" height="218" key="GridCell.Tab.0.center" timestamp="1585425013029">
       <screen x="0" y="31" width="1440" height="869" />
     </state>
-    <state width="1394" height="218" key="GridCell.Tab.0.center/0.31.1440.869@0.31.1440.869" timestamp="1585403441968" />
-    <state width="1394" height="218" key="GridCell.Tab.0.left" timestamp="1585403441966">
+    <state width="1394" height="218" key="GridCell.Tab.0.center/0.31.1440.869@0.31.1440.869" timestamp="1585425013029" />
+    <state width="1394" height="218" key="GridCell.Tab.0.left" timestamp="1585425013028">
       <screen x="0" y="31" width="1440" height="869" />
     </state>
-    <state width="1394" height="218" key="GridCell.Tab.0.left/0.31.1440.869@0.31.1440.869" timestamp="1585403441966" />
-    <state width="1394" height="218" key="GridCell.Tab.0.right" timestamp="1585403441969">
+    <state width="1394" height="218" key="GridCell.Tab.0.left/0.31.1440.869@0.31.1440.869" timestamp="1585425013028" />
+    <state width="1394" height="218" key="GridCell.Tab.0.right" timestamp="1585425013030">
       <screen x="0" y="31" width="1440" height="869" />
     </state>
-    <state width="1394" height="218" key="GridCell.Tab.0.right/0.31.1440.869@0.31.1440.869" timestamp="1585403441969" />
+    <state width="1394" height="218" key="GridCell.Tab.0.right/0.31.1440.869@0.31.1440.869" timestamp="1585425013030" />
     <state width="1394" height="270" key="GridCell.Tab.1.bottom" timestamp="1585392199965">
       <screen x="0" y="31" width="1440" height="869" />
     </state>
@@ -139,6 +138,6 @@
     <state x="383" y="218" width="672" height="678" key="search.everywhere.popup/0.31.1440.869@0.31.1440.869" timestamp="1585400705561" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/corouna$main.coverage" NAME="main Coverage Results" MODIFIED="1585403441948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/corouna$main.coverage" NAME="main Coverage Results" MODIFIED="1585425013001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

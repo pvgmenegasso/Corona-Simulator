@@ -7,7 +7,7 @@ import random as rd
 import time
 size_sc = 1366
 size_scv = 768
-n_pac = 200
+n_pac = 1000
 
 size = int(size_sc/(n_pac))
 
@@ -16,17 +16,23 @@ infected = pg.Color("red")
 deceased = pg.Color("black")
 normal = pg.Color("gray")
 
-
-
+timetodie = 600 #   (time in frames before the person either dies or heals)
+var = 300 # variance of this time
 
 distancec = 5
-contagionrate = 70  ## out of 100 times near distancec units of infected person
-deathrate = 5 ## out of 100 people sick die
+contagionrate = 90  ## out of 100 times near distancec units of infected person
+deathrate = 4 ## out of 100 people sick die
 class Circle():
 
     def __init__(self):
-        self.speedx = rd.randint(-7, 7)
-        self.speedy  = rd.randint(-4, 4)
+
+        # 80% of people  "stay at home"
+        if rd.randint(0, 100) > 80:
+            self.speedx = rd.randint(-7, 7)
+            self.speedy  = rd.randint(-4, 4)
+        else:
+            self.speedx = 0
+            self.speedy = 0
         self.x = rd.randint(0 + size, size_sc - size)
         self.y = rd.randint(0 + size, size_scv - size)
         self.color = normal
@@ -44,8 +50,7 @@ class Circle():
 
 
     def update(self):
-        if self.dead == True:
-            return
+
         if self.speed < 0:
             self.speed = 1
 
@@ -62,10 +67,11 @@ class Circle():
         else:
             self.speedy = - (self.speedy)
         self.y = self.y + self.speedy
+
         if self.sick == True:
             self.color = infected
             self.coronaframecounter += 1
-            if self.coronaframecounter > 1000:
+            if self.coronaframecounter > timetodie + rd.randint(-var, var):
                 self.corona = rd.randint(0, 100)
                 if self.corona <= deathrate:
                     self.dead = True
@@ -92,7 +98,7 @@ def contagion():
                     if distance(circle, circle1) <= distancec:
                         if rd.randint(0, 100) <= contagionrate:
                             circles[idx1].sick = True
-        time.sleep(0.01)
+        time.sleep(0.001)
 
 
 
@@ -133,6 +139,20 @@ def main():
 
             # determin if X was clicked, or Ctrl+W or Alt+F4 was used
             if event.type == pg.QUIT:
+                counter = 0
+                counter1 = 0
+                counter2 = 0
+                for circle in circles:
+                    if circle.dead ==True:
+                        counter += 1
+                    elif circle.healed == True:
+                        counter1 += 1
+                    else:
+                        counter2 = n_pac - (counter + counter1)
+
+                print(" Dead: " + str(counter) + " |  Healed: " + str(counter1) + " |  sick or not affected:"+ str(counter2))
+
+
                 sys.exit()
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_w and ctrl_held:
@@ -168,7 +188,7 @@ def main():
 
         pg.display.flip()
 
-        clock.tick(60)
+        clock.tick(200)
 
 
 main()
