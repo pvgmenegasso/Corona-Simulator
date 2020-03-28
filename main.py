@@ -1,7 +1,10 @@
+import math
+import threading
+from threading import Thread
 import pygame as pg
 import sys
 import random as rd
-
+import time
 size_sc = 1366
 size_scv = 768
 n_pac = 200
@@ -13,6 +16,12 @@ infected = pg.Color("red")
 deceased = pg.Color("black")
 normal = pg.Color("gray")
 
+
+
+
+distancec = 5
+contagionrate = 70  ## out of 100 times near distancec units of infected person
+deathrate = 5 ## out of 100 people sick die
 class Circle():
 
     def __init__(self):
@@ -35,7 +44,8 @@ class Circle():
 
 
     def update(self):
-
+        if self.dead == True:
+            return
         if self.speed < 0:
             self.speed = 1
 
@@ -53,22 +63,42 @@ class Circle():
             self.speedy = - (self.speedy)
         self.y = self.y + self.speedy
         if self.sick == True:
+            self.color = infected
             self.coronaframecounter += 1
             if self.coronaframecounter > 1000:
                 self.corona = rd.randint(0, 100)
-                if self.corona <= 4:
+                if self.corona <= deathrate:
                     self.dead = True
+                    self.sick = False
                     self.color = deceased
                 else:
                     self.healed = True
+                    self.sick = False
                     self.color = cured
 
-
-
-
-
-
+def distance(circle1, circle2):
+    return math.sqrt((circle1.x - circle2.x)**2+(circle1.y - circle2.y)**2)
 circles = []
+circlesaux = []
+
+def contagion():
+    global circles
+    global circlesaux
+    while True:
+        circlesaux = circles
+        for idx, circle in enumerate(circles):
+            if circle.sick == True:
+                for idx1, circle1 in enumerate(circlesaux):
+                    if distance(circle, circle1) <= distancec:
+                        if rd.randint(0, 100) <= contagionrate:
+                            circles[idx1].sick = True
+        time.sleep(0.01)
+
+
+
+
+
+
 
 
 
@@ -91,10 +121,11 @@ def main():
     init_circles(circles)
 
 
+    Thread(target = contagion, daemon=True).start()
+
     while 1:
 
         pressed = pg.key.get_pressed()
-
         alt_held = pressed[pg.K_LALT] or pressed[pg.K_RALT]
         ctrl_held = pressed[pg.K_LCTRL] or pressed[pg.K_RCTRL]
 
@@ -127,7 +158,11 @@ def main():
 
 
 
+
         screen.fill((0, 0, 0))
+
+
+
 
         render_circles(screen, circles)
 

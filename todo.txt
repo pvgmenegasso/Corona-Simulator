@@ -10,8 +10,9 @@
 		#assign hotkey to parameters
 
 	#SIMULATION
-		#contagion simulation
-		#realistic parameters
+		DONE contagion simulation 
+		DONE realistic parameters
 		#use time units instead of frames
 		#performance optimizations
+			DONE Threading
 		#supression scenarios
